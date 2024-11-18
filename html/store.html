@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>백미당</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=eb89b4732cdecef1a4014e5bac5d711a&libraries=services"></script>
+    <link rel="icon" href="../백미당/백미당/icon.png">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/header_footer.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../css/store.css">
+</head>
+<body>
+<div id="wrap">
+    <div class="thick_header">
+        <div class="t_header">
+            <div class="logo">
+                <a href="index.html"></a>
+            </div>
+        </div>
+        <div class="b_header">
+            <ul class="header_menu">
+                <li>
+                    <a href="brand.html">백미당</a>
+                    <ul class="sub_menu">
+                        <li>백미당 소식</li>
+                        <li>백미당 문화</li>
+                        <li>백미당 나눔</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="menu.html">메뉴안내</a>
+                    <ul class="sub_menu">
+                        <li><a href="#" data-category="coffee">커피</a></li>
+                        <li><a href="#" data-category="ice_cream">백미당 아이스크림</a></li>
+                        <li><a href="#" data-category="topping_dessert">Fresh 토핑 디저트</a></li>
+                        <li><a href="#" data-category="bakery">베이커리</a></li>
+                        <li><a href="#" data-category="soft_shake">Soft Shake</a></li>
+                        <li><a href="#" data-category="organic_milk">유기농우유</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="store.html">매장안내</a>
+                    <ul class="sub_menu">
+                        <li>서울지역</li>
+                        <li>경기.인천.강원지역</li>
+                        <li>영남.충청.호남지역</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="craftshop.html">백미당 공방</a>
+                    <ul class="sub_menu">
+                        <li>백미당 공방</li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="sns_btn_box">
+                <li>
+                    <a href="https://www.instagram.com/1964baekmidang/" target="_blank">
+                        <img src="../백미당/아이콘/instagram_icon.png" class="instagram">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.facebook.com/Baekmidang/" target="_blank">
+                        <img src="../백미당/아이콘/facebook_icon.png" class="facebook" id="facebook">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/@1964baekmidang/" target="_blank">
+                        <img src="../백미당/아이콘/youtube_icon.png" class="youtube" id="youtube">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="menu-container">
+        <div class="title">STORE</div>
+    </div>
+    <div class="map_box">
+        <div id="map"></div>
+        <div class="map_r">
+            <div id="filter_container">
+                <select id="sido">
+                    <option value="">시/도 선택</option>
+                    <option value="서울특별시">서울특별시</option>
+                    <option value="경기도">경기도</option>
+                    <option value="인천광역시">인천광역시</option>
+                    <option value="강원도">강원도</option>
+                    <option value="부산광역시">부산광역시</option>
+                    <option value="광주광역시">광주광역시</option>
+                    <option value="대구광역시">대구광역시</option>
+                    <option value="대전광역시">대전광역시</option>
+                    <option value="충청북도">충청북도</option>
+                    <option value="충청남도">충청남도</option>
+                    <option value="경상남도">경상남도</option>
+                    <option value="전라북도">전라북도</option>
+                </select>
+                <select id="sigungu">
+                    <!-- 서울특별시 -->
+                    <option value="">시/군/구 선택</option>
+                    <option value="강남구">강남구</option>
+                    <option value="송파구">송파구</option>
+                    <option value="강동구">강동구</option>
+                    <option value="노원구">노원구</option>
+                    <option value="종로구">종로구</option>
+                    <option value="영등포구">영등포구</option>
+                    <option value="구로구">구로구</option>
+                    <option value="금천구">금천구</option>
+                    <option value="마포구">마포구</option>
+                    <option value="강서구">강서구</option>
+                    <option value="용산구">용산구</option>
+                    <option value="중구">중구</option>
+                    <option value="동작구">동작구</option>
+                    <option value="서초구">서초구</option>
+                    <option value="은평구">은평구</option>
+                    <option value="성북구">성북구</option>
+    
+                    <!-- 경기도 -->
+                    <option value="하남시">하남시</option>
+                    <option value="고양시">고양시</option>
+                    <option value="성남시">성남시</option>
+                    <option value="수원시">수원시</option>
+                    <option value="광명시">광명시</option>
+                    <option value="부천시">부천시</option>
+                    <option value="김포시">김포시</option>
+                    <option value="남양주시">남양주시</option>
+                    <option value="화성시">화성시</option>
+    
+                    <!-- 인천광역시 -->
+                    <option value="연수구">연수구</option>
+    
+                    <!-- 강원도 -->
+                    <option value="원주시">원주시</option>
+    
+                    <!-- 부산광역시 -->
+                    <option value="부산진구">부산진구</option>
+                    <option value="해운대구">해운대구</option>
+                    <option value="동구">동구</option>
+    
+                    <!-- 광주광역시 -->
+                    <option value="서구">서구</option>
+    
+                    <!-- 대구광역시 -->
+                    <option value="동구">동구</option>
+    
+                    <!-- 대전광역시 -->
+                    <option value="서구">서구</option>
+                    <option value="동구">동구</option>
+                    <option value="유성구">유성구</option>
+    
+                    <!-- 충청북도 -->
+                    <option value="청주시">청주시</option>
+    
+                    <!-- 충청남도 -->
+                    <option value="천안시">천안시</option>
+    
+                    <!-- 경상남도 -->
+                    <option value="창원시">창원시</option>
+                    <option value="김해시">김해시</option>
+    
+                    <!-- 전라북도 -->
+                    <option value="군산시">군산시</option>
+                </select>
+                <input type="text" id="search" placeholder="검색어 입력">
+                <button onclick="filterMarkers()">검색</button>
+            </div>
+            <div id="map_info">
+                <div class="info_box">
+                    <div class="title">매장명</div>
+                    <div class="address">주소: </div>
+                    <div class="call">전화: </div>
+                    <div class="time">영업시간 </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../js/common.js"></script>
+<script src="../js/store.js"></script>
+</body>
+</html>

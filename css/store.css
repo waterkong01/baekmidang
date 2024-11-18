@@ -1,0 +1,38 @@
+.map_box {
+    display: flex;
+    justify-content: space-between;
+}
+#map {
+    width: 45%;
+    height: calc(100vh - 248.73px);
+    margin-left: 4vw;
+}
+#filter_container {
+    height: 10%;
+}
+#sido, #sigungu, #search {
+    height: 40px;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+button {
+    width: 70px;
+    height: 40px;
+    padding: 0 10px;
+}
+#map_info {
+    /* width: 45%;
+    height: calc(100vh - 248.73px);
+    margin-right: 4vw; */
+    box-sizing: border-box;
+    display: none;
+}
+.map_r {
+    width: 45%;
+    height: calc(100vh - 248.73px);
+    margin-right: 4vw;
+    box-sizing: border-box;
+}
+.info_box { width: 100%; }
+.info_box .title { font-weight: bold; font-size: 1.2em; }
+.info_box .address, .info_box .call, .info_box .time { margin: 15px 0; }
