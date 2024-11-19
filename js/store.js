@@ -872,7 +872,7 @@ var positions = [
 ];
 
 // 마커 이미지의 이미지 주소입니다
-var imageSrc = '../백미당/아이콘/marker.png'; 
+var imageSrc = './백미당/아이콘/marker.png'; 
     
 // 현재 표시된 마커들을 저장할 배열
 var markers = [];
